@@ -36,11 +36,7 @@ def main():
     if EMAIL is not None and PASSWORD is not None:
         reader = Reader(EMAIL, PASSWORD)
         sender = Sender(EMAIL, PASSWORD)
-
-    use_template = False
-    # Check if the template path is not None
-    if TEMPLATE_PATH is not None:
-        use_template = True
+    
     
     # Get the latest email
     if reader is not None:
@@ -52,15 +48,13 @@ def main():
             with open("Emails/latest_email.html", "w") as f:
                 f.write(str(latest_email))
         # Send the email
-        if use_template:
-            with open(TEMPLATE_PATH, "r") as f:
-                try:
-                    # Hopefully they read the documentation and know to leave the sender and reciever to us
-                    sender.send_template(email_sender, f"Re: {email_subject}", TEMPLATE_PATH)
-                except Exception as e:
-                    print("An error occurred:")
-                    print(e)
-
+        with open(TEMPLATE_PATH, "r") as f:
+            try:
+                # Hopefully they read the documentation and know to leave the sender and reciever to us
+                sender.send_template(email_sender, f"Re: {email_subject}", TEMPLATE_PATH)
+            except Exception as e:
+                print("An error occurred:")
+                print(e)
 
 if __name__ == "__main__":
     main()

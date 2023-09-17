@@ -6,7 +6,7 @@ Sadly, I think it only works with gmail, however if you wanted you could **try**
 
 I made this because I am often at school, and if someone emails me I want them to know that I care, so I wrote this program to automatically respond.
 
-## Installation
+## Installation and Usage
 
 This project requires Python 3.11.4 or above, and pip 23.2.1 or higher.
 
@@ -51,8 +51,6 @@ If you want to use a template file, create a file called `template.html` in the 
     </body>
 </html>
 ```
-
-## Usage
 
 To run the program, simply run the following command:
 

@@ -67,6 +67,12 @@ To Automate this (On a Linux machine) you can use cron jobs.
 To do this, run the following command:
 
 ```bash
+chmod +x main.py
+```
+
+then run this:
+
+```bash
 crontab -e
 ```
 
